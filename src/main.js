@@ -20,16 +20,16 @@ const button = document.getElementById("runButton");
 
 const inp = document.getElementById("input");
 async function runCode() {
-  const out = document.getElementById("output");
+  const stdout = document.getElementById("stdoutTag");
+  const stderr = document.getElementById("stderrTag");
   const res = await invoke("run_code", { source: inp.value });
 
-  console.log(res);
-  if (res.exit_code == 0) {
-    out.textContent = res.stdout;
-  } else {
-    out.textContent = res.stderr;
-  }
-  out.textContent = out.textContent + `\nExit code: ` + res.exit_code;
+  stdout.textContent = res.stdout;
+  stderr.textContent = res.stderr;
+
+  console.log(res.stdout);
+
+  // out.textContent = out.textContent + `\nExit code: ` + res.exit_code;
 }
 
 button.addEventListener("click", runCode);
