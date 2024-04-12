@@ -10,17 +10,38 @@
       .logo.vanilla:hover {
         filter: drop-shadow(0 0 2em #ffe21c);
       }
+      .outputPanel {
+        height: 100%;
+      }
+      #input {
+        height: 100%;
+        max-width: 800px;
+        width: 100vw;
+      }
+      .container {
+        max-height: 600px;
+        height: 100vh;
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <button id="runButton">Run</button>
-      <textarea id="input">
+      <div>
+        <br />
+        <button id="runButton">Run</button>
+      </div>
+      <div>
+        <label>Input</label>
+        <br />
+        <textarea id="input">
 def HelloWorld():
   print('Hello world')
 HelloWorld()
-      </textarea>
+      </textarea
+        >
+      </div>
+
       <div>
         <label>Stdout</label>
         <br />
